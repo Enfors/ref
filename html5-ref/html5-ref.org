@@ -1,0 +1,96 @@
+* JavaScript APIs
+
+** New JavaScript APIs
+
+- caniuse.com is a useful resource for listing which browsers supports
+  which feature.
+
+*** Canvas
+
+- For drawing.
+
+- 2d or 3d context.
+
+*** Contacts
+
+Local contacts repository that websites can access.
+
+*** File API
+
+- Sandboxed areas on user's computer for storage.
+
+*** Forms
+
+- Built-in validation.
+
+*** Geolocation
+
+- Useful for mobile.
+
+- More info in Pluralsight HTML5 Advanced topics.
+
+*** IndexedDB
+
+- Local storage, structured.
+
+- Useful for large amounts of data.
+
+- More like object db than relational db.
+
+*** Media Capture
+
+- Web cam, microphone, etc.
+
+*** Microdata
+
+- Having content for both people and computers on same page.
+
+- Adds extra metadata for computers in pages.
+
+*** Messaging
+
+*** Offline Web Applications
+
+- Useful for offline web apps.
+
+- Similar to how the cache works.
+
+- More info:
+
+  - Pluralsight HTML5 Advanced topics.
+
+  - Pluralsight HTML% Line of Business Apps with Bootstrap, MVC4 and
+    WebAPI.
+
+*** Selection
+
+- Similar to jQuery selection capabilites.
+
+*** Server-sent events
+
+- Sending one-way data from server to client.
+
+- Stream data.
+
+- Transmits via HTTP.
+
+*** Web notifications
+
+- Toasts in OS from webpages.
+
+*** Web sockets
+
+- Two-way communication between server and client.
+
+- More info in Pluralsight HTML5 Advanced topics.
+
+*** Web storage
+
+*** Web workers
+
+- Threads on web pages.
+
+*** XMLHttpRequest level 2
+
+- Something about AJAX... ?
+

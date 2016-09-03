@@ -1,0 +1,54 @@
+* GPG ref
+
+Written while reading http://www.ianatkinson.net/computing/gnupg.htm
+
+** Overview
+
+GnuPG is an implementation of PGP.
+
+Strength: I can encrypt a file for you using just your public key. But
+you need BOTH your public AND private keys to decrypt it.
+
+Keys are associated with name, email and comment.
+
+Private keys are associated with a passphrase.
+
+My key (E4ADFB17) has been uploaded to pgp.mit.edu.
+Fingerprint: AC47 F870 648C 4F79 F383  300C 8531 1564 E4AD FB17
+
+** Commands
+
+- List keys on your keyring: gpg --list-keys
+
+*** Encrypting a file
+
+$ gpg -e -r christer.enfors@gmail.com file-to-encrypt
+
+-e means encrypt, -r means recipient - the only person who will be able 
+to decrypt this file.
+
+*** Decrypting a file
+
+$ gpg -d file-to-decrypt.gpg -o decrypted-file
+
+-d means decrypt, -o means output. Omit it, and it's printed on stdout.
+
+* Priv
+
+Real---------------4--1
+
+gpg: key E4ADFB17 marked as ultimately trusted
+public and secret key created and signed.
+
+gpg: checking the trustdb
+gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+pub   2048R/E4ADFB17 2015-08-26
+      Key fingerprint = AC47 F870 648C 4F79 F383  300C 8531 1564 E4AD FB17
+uid                  Christer Enfors (Home) <christer.enfors@gmail.com>
+sub   2048R/A9897BF2 2015-08-26
+
+enfors@define-xdev:~$ gpg --keyserver hkp://pgp.mit.edu --send-keys 'AC47 F870 648C 4F79 F383  300C 8531 1564 E4AD FB17'
+gpg: sending key E4ADFB17 to hkp server pgp.mit.edu
+enfors@define-xdev:~$ 
+

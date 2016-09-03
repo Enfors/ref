@@ -1,0 +1,28 @@
+* Movement keys
+
+| Key   | Description                               |
+|-------+-------------------------------------------|
+| M-m   | Move to first non-whitespace char on line |
+| M-f   | Move forward by word                      |
+| M-b   | Move backward by word                     |
+|-------+-------------------------------------------|
+| C-M-f | Move forward by s-expression              |
+| C-M-b | Move backward by s-expression             |
+|-------+-------------------------------------------|
+| C-M-d | Move deeper into a nested list            |
+| C-M-u | Move outwards from a nested list          |
+|-------+-------------------------------------------|
+| C-M-k | Kill the s-expression in front of point   |
+|-------+-------------------------------------------|
+| C-M-n | Move forward to the next list             |
+| C-M-p | Move backward to the previous list        |
+|-------+-------------------------------------------|
+| M-}   | Move forward to end of paragraph          |
+| M-{   | Move backward to start of paragraph       |
+|-------+-------------------------------------------|
+| M-a   | Move to beginning of sentence             |
+| M-e   | Move to end of sentence                   |
+|-------+-------------------------------------------|
+| C-M-a | Move to beginning of defun                |
+| C-M-e | Move to end of defun                      |
+

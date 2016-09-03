@@ -1,0 +1,20 @@
+* Network
+
+** Directory services
+
+*** LDAP - Lightweight Directory Access Protocol
+
+- Wikipedia: "an open, vendor-neutral, industry standard application
+  protocol for accessing and maintaining distributed directory
+  information services over an Internet Protocol (IP) network."
+
+- RFC 4511.
+
+- Example query: "Search in the company email directory for all people
+  located in Nashville whose name contains 'Jesse' that have an email
+  adress. Please return their full name, email, title and
+  description."
+
+- Commonly used for "single sign on".
+
+** Active directory

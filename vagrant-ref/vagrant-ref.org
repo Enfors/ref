@@ -1,0 +1,109 @@
+* Vagrant commands
+
+- vagrant init --minimal (name) (url)
+- vagrant init --minimal ubuntu/trusty64
+
+- vagrant up
+
+- vagrant status
+
+- vagrant reload
+
+- vagrant provision
+
+- vagrant halt
+
+# To create a .box file from your already set up machine:
+- vagrant package
+
+* Vagrantfile configuration
+
+Use 'vagrant reload' to reload the configuration. Halts and restarts
+the machine.
+
+** Shared folders
+
+#                      Label   Guest dir  Host dir
+config.vm.share_folder "data", "/data",   "./data"
+
+** Networking
+
+*** Port forwarding
+
+# Vagrant 1
+config.vm.forward_port 80, 8080
+
+# Vagrant 2
+config.vm.network "forwarded_port", guest: 80, host: 8080
+
+*** Host-only networking
+
+# Host-only networking creates a local network between the host and
+# the guest, that noone outside host can access. You specify a static
+# IP address for the guest. This means the host can access all ports
+# on the guest, and vice versa. The host always has an IP address on
+# the same network as the guest, but with the last octet set to 1.
+
+# Vagrant 1 - making whole guest network accessible by host
+config.vm.network "hostonly", "192.168.33.10"
+# This means that the host's IP address is 192.168.33.1.
+
+*** Bridged networking
+
+# While host-only networking places the guest "inside" the host,
+# bridged networking places the guest "next to" the host, with a
+# different IP address on the same network as the host. This means
+# that other devices that can access that network can access the guest
+# too. 
+
+# Vagrant 1
+config.vm.network "bridged"
+
+** Provisioning
+
+# It is possible to use multiple "provision" lines on the same
+# machine, to for example, run several shell scripts.
+
+config.vm.provision "shell", path: "provision.sh"
+
+config.vm.provision "shell", inline: "apt-get install -y apache"
+
+** Clustering - running multiple virtual machines
+
+# Vagrant 1
+Vagrant::Config.run do |config|
+  # Both machines will use box "precise64".
+  config.vm.box = "precise64"
+
+  # Machine 1 - "web"
+  config.vm.define "web" do |web|
+    web.vm.forward_port 80, 8080
+
+    # Vagrant 1
+    web.vm.provision :shell, path: "provision.sh"
+
+    # Vagrant 2
+    web.vm.provision "shell", path: "provision.sh"
+
+    # Vagrant 1
+    web.vm.network :hostonly, "192.168.33.10"
+  end
+
+  # Machine 2 - "db"
+  config.vm.define "db" do |db|
+    # Vagrant 1
+    db.vm.network :hostonly, "192.168.33.11"
+
+    # Vagrant 2
+    db.vm.network "private_network", ip: "192.168.33.11"
+  end
+end
+
+
+
+** Boxes
+
+Vagrant uses snapshots of virtual machines with an OS already
+installed, called "boxes". It's faster to download a snapshot that it
+is to download and install an OS from scratch. A .box file is a tar
+file, possibly gzipped.

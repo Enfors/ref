@@ -1,0 +1,167 @@
+* Basics
+
+** Create repository
+
+$ git init
+
+** Add file
+
+$ git add filename.txt
+
+** Commit
+
+$ git commit -m "Add filename.txt"
+
+** Add files using wildcard
+
+$ git commit -m '*.txt'
+
+** Removing files
+
+$ git rm "*.txt"
+
+** Reset
+
+$ git reset file.txt
+
+* Remote repositories
+
+** Adding and pushing to remote repository
+
+First, create a GitHub repository on http://github.com.
+
+$ git remote add origin https://github.com/Enfors/syscond.git
+$ git push -u origin master
+
+Explanation of "origin" and "master":
+
+- Origin is the remote branch name.
+- Master is the default local branch name.
+
+The -u parameter tells git to remember these, so the next time we type:
+
+$ git push
+
+without specifying "origin" and "master".
+
+** Pulling from remote repository
+
+$ git pull origin master
+
+* Branching
+
+** Adding a branch
+
+$ git branch branch_name
+
+Switching to the newly created branch:
+
+$ git checkout branch_name
+
+** Merging branch with master
+
+When you merge, you merge ANOTHER branch INTO your current branch.
+
+First, switch back to master branch:
+
+$ git checkout master
+
+Merge branch called "branch_name" with master:
+
+$ git merge branch_name
+
+Possibly delete the old branch:
+
+$ git branch -d branch_name
+
+** Rebasing and when not to
+
+Rebasing applies all of one branch's commits linearly into another.
+
+*** The golden rule of rebasing
+
+Ask yourself: "Does anyone else look at this branch?"
+If the answer is "yes", then don't rebase.
+
+* Tags
+
+There are two types of tags: lightweight and annotated (recommended).
+
+** Lightweight tags
+
+- Like an immutable branch
+- Pointer to a specific commit
+
+** Annotated tags
+
+- Also a pointer to a specific commit
+- Full objects
+- SHA1, tagger name, email, date, message
+- Can be signed and verified (GPG)
+- Recommended method
+
+* GitFlow workflow
+
+GitFlow was created by someone by writing a blog post in 2010.
+
+Two branches: master and develop.
+
+** Master
+
+origin/master HEAD -> Production branch
+
+** Develop
+
+origin/develop HEAD -> integration branch
+
+- Latest dev changes
+- Nightly build is done from this branch
+- Only merge completed features - stable but not production ready
+
+** Supporting branches
+
+*** Feature branches
+
+- Each feature has its own branch
+- Start by branching from the "develop" branch
+- Name it anything BUT master, develop, release-*, hotfix-*
+- Your feature branch exists only while in development
+- Recommended to keep it in your local repo only
+- Merge when done and stable (but not production ready)
+
+*** Release branches
+
+- Name it release-* where star is name of release
+- Used to support preparation of production release
+  - Branch almost production ready code
+  - Can work on minor buf fixes
+  - Update metadata (version info)
+- While this branch exists, normal work can continue in "develop" branch
+- When ready for release:
+  - Merge back into "master"
+  - Tag the release
+  - Delete the release branch
+- Rules:
+  - May branch off from "develop"
+  
+*** Hotfix branches
+
+- Hotfix branches are for unplanned emergency releases
+- Name it hotfix-* where star is something appropriate
+- Fix a bug while the team keeps working elsewhere
+- When fixing is done:
+  - Update metadata
+  - Merge into "master" and "develop"
+    - Except if it originated from a release branch
+    - In that case, it should be merged back into that branch
+  - Delete the branch
+- Rules:
+  - May branch from "master"
+  - Must merge back into "master" unless it's from release
+  
+  - Must merge back into "develop" and "master"
+- Feature branches are sometimes called "topic" branches
+
+*** Release branch
+
+*** Hotfix

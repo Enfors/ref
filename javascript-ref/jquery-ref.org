@@ -1,0 +1,79 @@
+* Notes from Pluralsight Introduction to JavaScript & jQuery
+
+* Terminology
+
+| Term | Description                                                      |
+|------+------------------------------------------------------------------|
+| DOM  | Document object model. Web pages are stored in memory with this. |
+|      |                                                                  |
+
+* Intro
+
+** Unobtrusive
+
+- Stuff is kept separate.
+
+| Behavior  | Content    | Presentation |
+|-----------+------------+--------------|
+| jquery.js | index.html | style.css    |
+| custom.js |            |              |
+
+** Reduces browser inconsistencies
+
+- With jQuery, you don't have to worry about which browser you're using.
+
+** Find something / do something
+
+*** Find something
+
+- The dollar sign is not magical.
+
+- In jQuery, most things start with $.
+
+- Examples: 
+
+  - $('div') // Find every div on the page
+
+*** Do something
+
+- For example, let elements "listen" for something to happen:
+
+  - The document is ready.
+
+  - User does something.
+
+  - Another "listener" acts.
+
+  - Certain amount of time elapses.
+
+- Do something:
+
+  - Manipulate elements
+
+  - Animate elements
+
+  - Communicate with the server
+
+** Dev Tools
+
+*** Modernizr
+
+- www.modernizr.com will feature test your browser (I think?).
+
+*** Can I use
+
+- caniuse.com tells you which features are supported by which
+  browsers.
+
+*** Code sharing
+
+**** jsfiddle
+
+- jsfiddle.net "Hey, I created a fiddle, can you look at it?". Seems
+  similar to pasteebin.
+
+- jsbin.com is similar to jsfiddle.
+
+*** Chrome developer tools
+
+- code.google.com/chrome/devtools/

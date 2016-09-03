@@ -1,0 +1,43 @@
+* Installation
+
+Tmuxinator is a Ruby application. There's an alias called mux.
+
+# apt-get install ruby-full
+# gem install tmuxinator
+
+* Tmuxinator projects
+
+Projects are stored in ~/.tmuxinator, as yaml files.
+
+** Creating projects
+
+tmuxinator new my_project
+
+** Launching an existing project
+
+tmuxinator my_project
+
+* Example project file
+
+name: Home
+root: ~/
+
+windows:
+  - Shell:
+      layout: even-horizontal
+      panes:
+      - shell:
+        - cd
+      - other:
+        - cd
+  - EnforsBot:
+      layout: main-vertical
+      panes:
+      - Emacs:
+        - cd ~/devel/python/enforsbot
+        - emacs enforsbot.py
+      - Bot:
+        - cd ~/devel/python/enforsbot
+        - ./enforsbot.py
+      - Shell:
+        - cd ~/devel/python/enforsbot
