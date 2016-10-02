@@ -26,3 +26,14 @@
 | C-M-a | Move to beginning of defun                |
 | C-M-e | Move to end of defun                      |
 
+* Window configuration
+
+Winner mode allows you to "undo" changes to your window configuration.
+Let's say you have 3 windows open, and you type C-x 1. With
+winner-mode, you can go back to having the three windows by typing C-c
+<left>. You can also "redo" with C-c <right>.
+
+| Key         | Description                            |
+|-------------+----------------------------------------|
+| C-c <left>  | Winner-mode: undo window config change |
+| C-c <right> | Winner-mode: redo window config change |
