@@ -37,3 +37,10 @@ winner-mode, you can go back to having the three windows by typing C-c
 |-------------+----------------------------------------|
 | C-c <left>  | Winner-mode: undo window config change |
 | C-c <right> | Winner-mode: redo window config change |
+* Selection commands
+
+| Key       | Description       |
+|-----------+-------------------|
+| C-x h     | Mark whole buffer |
+| C-M-h     | Mark defun        |
+| C-M-<SPC> | Mark sexpr / word |
