@@ -26,6 +26,7 @@
 | C-M-a | Move to beginning of defun                |
 | C-M-e | Move to end of defun                      |
 
+
 * Window configuration
 
 Winner mode allows you to "undo" changes to your window configuration.
@@ -37,6 +38,8 @@ winner-mode, you can go back to having the three windows by typing C-c
 |-------------+----------------------------------------|
 | C-c <left>  | Winner-mode: undo window config change |
 | C-c <right> | Winner-mode: redo window config change |
+
+
 * Selection commands
 
 | Key       | Description       |
@@ -44,3 +47,31 @@ winner-mode, you can go back to having the three windows by typing C-c
 | C-x h     | Mark whole buffer |
 | C-M-h     | Mark defun        |
 | C-M-<SPC> | Mark sexpr / word |
+
+* Third party software
+
+** Installing third party software
+
+M-x package-install
+
+To make downloaded packages work, add the following to your .emacs:
+
+(package-initialize)
+
+before you try to start any downloaded package.
+
+** helm-mode
+
+(require 'helm-config)
+
+NOTE: All helm keys share the prefix C-x c, omitted below for simplicity.
+
+| Key      | Description                       |
+|----------+-----------------------------------|
+| RET      | Primary action (like open, etc)   |
+| C-e      | Secondary action                  |
+| C-j      | Tetriary action                   |
+| TAB      | Switch to action selector         |
+| C-n, C-p | Next, previous candidate          |
+| M-<, M-> | Beginning, end of completion list |
+
