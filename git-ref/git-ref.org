@@ -58,6 +58,20 @@ Switching to the newly created branch:
 
 $ git checkout branch_name
 
+** Listing branches
+
+List all local branches:
+
+$ git branch
+
+List all remote branches:
+
+$ git branch -r
+
+List all remote AND local branches:
+
+$ git branch -a
+
 ** Merging branch with master
 
 When you merge, you merge ANOTHER branch INTO your current branch.
