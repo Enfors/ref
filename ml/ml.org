@@ -1,0 +1,94 @@
+* General
+
+These notes are largely based on the book Hands-on machine learning
+with Scikit-Learn and TensorFlow, by Aurélien Géron.
+
+** Classifications
+
+*** Types of machine learning systems
+
+They can be classified in broad categories based on:
+
+- Supervised, unsupervised, semisupervised, reinforcement learning
+
+- Whether or not they can learn incrementally on the fly (online
+  versus batch learning)
+
+- Whether they work by simply compairing new data points to known data
+  points, or instead detect patterns in the training data and build a
+  predictive model, much line scientists do (instance-based versus
+  model-based learning)
+
+These criteria are not exclusive - you can combine them in any way you
+like. 
+
+**** Supervised learning
+
+The training data includes the desired solutions, called "labels".
+
+**** Unsupervised learning
+
+The training data is unlabeled. The system tries to learn without a
+teacher.
+
+Some important unsupervised learning algorithms:
+
+- Clustering
+  - k-Means
+  - Hierarchical Cluster Analysis (HCA)
+  - Expectation Maximization
+- Visualization and dimensionality reduction
+  - Principal Component Analysis (PCA)
+  - Kernel PCA
+  - Locally-Linear Embedding (LLE)
+  - t-Distributed Stochastic Neighbor Embedding (t-SNE)
+- Association rule learning
+  - Apriori
+  - Eclat
+
+**** Semisupervised learning
+
+Deals with partially labeled data; usually most of it is unlabeled.
+Google Photos is a good example. It recognizes the same people in many
+photos, and you tell it who it is (you label it) in one of the
+pictures. The system will realize that it's the same person in all
+those photos.
+
+**** Reinforcement learning
+
+- The "creature" in Black & White.
+- AlphaGo.
+- Robots trying to learn to walk on their own.
+
+**** Batch learning versus Online learning
+
+This is another way of classifying learning systems.
+
+***** Batch learning
+
+In this mode, it can't learn with incomplete data - it needs all the
+data at the same time. Also called offline learning.
+
+First it is trained, then it is used. It doesn't learn while being
+used. 
+
+Since it needs all data when it learns (or relearns), it takes a long
+time. This system is simple, and often good enough.
+
+***** Online learning
+
+Can learn incrementally with small batches of data, called "mini
+batches". Each learning step is fast and cheap. It doesn't necessarily
+have to happen on a running system though (while it is in use) - the
+key feature of online learning is that it can learn incrementally.
+
+* Glossary
+
+| Term      | Description                                                 |
+|-----------+-------------------------------------------------------------|
+| Label     | A desired solution included in training data for supervised |
+|           | learning.                                                   |
+| Predictor | For example, mileage, age and brand for cars could be       |
+|           | "predictors" used to try to guesstimate a car's value.      |
+| Attribute | Data type (for example, "milage")                           |
+| Feature   | Generally a an attribute plus its value.                    |
