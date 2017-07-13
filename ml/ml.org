@@ -54,11 +54,14 @@ photos, and you tell it who it is (you label it) in one of the
 pictures. The system will realize that it's the same person in all
 those photos.
 
+
 **** Reinforcement learning
 
-- The "creature" in Black & White.
 - AlphaGo.
 - Robots trying to learn to walk on their own.
+- The agent has to be able to figure out on its own if it should get
+  good or bad reinforcement - if someone else is doing it (like with
+  the creature in Black & White), it's not reinforcement learning.
 
 **** Batch learning versus Online learning
 
@@ -81,6 +84,20 @@ Can learn incrementally with small batches of data, called "mini
 batches". Each learning step is fast and cheap. It doesn't necessarily
 have to happen on a running system though (while it is in use) - the
 key feature of online learning is that it can learn incrementally.
+
+"Learning rate" is how fast the system should adapt to new data. High
+means adapt quickly.
+
+**** Instance-based versus Model-based learning
+
+***** Instance-based learning
+
+Based on individual examples. Things are classified based on how
+similar they are to already classified instances.
+
+***** Model-based
+
+Model-based makes predictions.
 
 * Glossary
 
