@@ -16,7 +16,7 @@ They can be classified in broad categories based on:
 
 - Whether they work by simply compairing new data points to known data
   points, or instead detect patterns in the training data and build a
-  predictive model, much line scientists do (instance-based versus
+  predictive model, much like scientists do (instance-based versus
   model-based learning)
 
 These criteria are not exclusive - you can combine them in any way you
@@ -25,6 +25,17 @@ like.
 **** Supervised learning
 
 The training data includes the desired solutions, called "labels".
+
+You use different scoring functions depending of whether you want to
+use categorical or regression.
+
+***** Categorical
+
+The purpose is to divide the data into categories. Male / female, etc.
+
+***** Regression
+
+The purpose is the assign a value to each data point.
 
 **** Unsupervised learning
 
@@ -99,13 +110,51 @@ similar they are to already classified instances.
 
 Model-based makes predictions.
 
+** Machine learning project checklist
+
+1. Frame the problem and look at the big picture.
+
+2. Get the data.
+
+3. Explore the data to gain insights.
+
+4. Preare the data to better expose the underlying data patterns to
+   Machine Learning algorithms.
+
+5. Explore many different models and short-list the best ones.
+
+6. Fine-tune your models and combine them into a great solution.
+
+7. Present your solution.
+
+8. Launch, monistor and maintain your system.
+
+** Equations and RMSE
+
+RMSE = Root Mean Square Error, is a typical performance measure for
+regression problems. You try to get as low a RMSE as possible.
+
+The purpose of RMSE is a scoring function which focuses on the bigger
+errors, since all errors are squared.
+
+| Variable     | Explanation                                            |
+|--------------+--------------------------------------------------------|
+| m            | Number of instances in the dataset                     |
+| x[upper (i)] | A vector of all the feature values excluding the label |
+|              | of the i[upper th] and y[upper (i)] is its label.      |
+
 * Glossary
 
-| Term      | Description                                                 |
-|-----------+-------------------------------------------------------------|
-| Label     | A desired solution included in training data for supervised |
-|           | learning.                                                   |
-| Predictor | For example, mileage, age and brand for cars could be       |
-|           | "predictors" used to try to guesstimate a car's value.      |
-| Attribute | Data type (for example, "milage")                           |
-| Feature   | Generally a an attribute plus its value.                    |
+| Term       | Description                                                 |
+|------------+-------------------------------------------------------------|
+| Label      | A desired solution included in training data for supervised |
+|            | learning.                                                   |
+| Predictor  | For example, mileage, age and brand for cars could be       |
+|            | "predictors" used to try to guesstimate a car's value.      |
+| Attribute  | Data type (for example, "milage")                           |
+| Feature    | Generally a an attribute plus its value.                    |
+| Pipeline   | A sequence of data processing components.                   |
+| RMSE       | Root Mean Square Error                                      |
+| Hypothesis | Predictor function                                          |
+| MAE        | Mean Absolute Error (outliers are more okay than w/ RMSE)   |
+|            |                                                             |
