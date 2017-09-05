@@ -59,3 +59,10 @@ def hello(target_name=None):
 hello2()
 hello2("foo")
                                                                     
+####################################################################
+#
+# COOL TRICKS
+
+# Neat syntax for finding errors:
+errors = log_data.filter(lambda line: "ERROR" in line)
+
