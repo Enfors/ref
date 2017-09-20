@@ -20,6 +20,17 @@
 # If you start Python with no args, then sys.path[0] == '', which
 # means the current directory.
 
+####################################################################
+#
+# LISTS
+
+# "Merging" two lists together
+
+names = ["Bob", "Jessica", "Mary", "John", "Mel"]
+births = [968, 155, 77, 578, 973]
+BabyDataSet = list(zip(names, births))
+BabyDataSet
+# [('Bob', 968), ('Jessica', 155), ('Mary', 77), ('John', 578), ('Mel', 973)]
 
 ####################################################################
 #
