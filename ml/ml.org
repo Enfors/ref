@@ -143,6 +143,59 @@ errors, since all errors are squared.
 | x[upper (i)] | A vector of all the feature values excluding the label |
 |              | of the i[upper th] and y[upper (i)] is its label.      |
 
+* Algorithms
+
+** Stochastic Gradient Descent classifier (<<<SGD>>>)
+
+- Advantage: Handles large datasets efficiently.
+- Note: It's random. Use random_state=42 argument to constructor
+  to make it repeatable.
+
+** K-nearest Neighbor (<<<KNN>>>)
+
+- Used for: Classification and regression.
+
+* Concepts
+
+** <<<Precision>>> and <<<Recall>>>
+
+** <<<Confusion matrix>>>
+
+Confusion matrixes, also known as error matrixes, are used to
+evaluate the performance of a classifier by displaying the
+performance visually.
+
+- Each row represents the instances in a predicted class.
+- Each column represents the instances in an actual class (or
+  vice versa).
+
+*** Example
+
+Across ----> Actual class
+
+Down |
+     | Predicted class
+     V
+
+|--------+-----+-----+--------|
+|        | Cat | Dog | Rabbit |
+|--------+-----+-----+--------|
+| Cat    |   5 |   2 |      0 |
+|--------+-----+-----+--------|
+| Dog    |   3 |   3 |      2 |
+|--------+-----+-----+--------|
+| Rabbit |   0 |   1 |     11 |
+|--------+-----+-----+--------|
+
+- Of the 8 ACTUAL cats, the system predicted that 5 of them were
+  cats, 3 dogs and no rabbits.
+- Of the 7 PREDICTED cats, 2 were actually dogs and 5 were in
+  fact cats.
+
+* Scoring
+
+** Root Mean Square Error (<<<RMSE>>>)
+
 * Glossary
 
 | Term       | Description                                                 |
