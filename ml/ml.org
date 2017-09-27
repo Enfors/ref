@@ -1,11 +1,11 @@
+#+TAGS: clf reg
+
 * General
 
 These notes are largely based on the book Hands-on machine learning
 with Scikit-Learn and TensorFlow, by Aurélien Géron.
 
-** Classifications
-
-*** Types of machine learning systems
+** Types of machine learning systems
 
 They can be classified in broad categories based on:
 
@@ -22,22 +22,22 @@ They can be classified in broad categories based on:
 These criteria are not exclusive - you can combine them in any way you
 like. 
 
-**** Supervised learning
+*** Supervised learning
 
 The training data includes the desired solutions, called "labels".
 
 You use different scoring functions depending of whether you want to
 use categorical or regression.
 
-***** Categorical
+**** Categorical
 
 The purpose is to divide the data into categories. Male / female, etc.
 
-***** Regression
+**** Regression
 
 The purpose is the assign a value to each data point.
 
-**** Unsupervised learning
+*** Unsupervised learning
 
 The training data is unlabeled. The system tries to learn without a
 teacher.
@@ -57,7 +57,7 @@ Some important unsupervised learning algorithms:
   - Apriori
   - Eclat
 
-**** Semisupervised learning
+*** Semisupervised learning
 
 Deals with partially labeled data; usually most of it is unlabeled.
 Google Photos is a good example. It recognizes the same people in many
@@ -66,7 +66,7 @@ pictures. The system will realize that it's the same person in all
 those photos.
 
 
-**** Reinforcement learning
+*** Reinforcement learning
 
 - AlphaGo.
 - Robots trying to learn to walk on their own.
@@ -74,11 +74,11 @@ those photos.
   good or bad reinforcement - if someone else is doing it (like with
   the creature in Black & White), it's not reinforcement learning.
 
-**** Batch learning versus Online learning
+*** Batch learning versus Online learning
 
 This is another way of classifying learning systems.
 
-***** Batch learning
+**** Batch learning
 
 In this mode, it can't learn with incomplete data - it needs all the
 data at the same time. Also called offline learning.
@@ -89,7 +89,7 @@ used.
 Since it needs all data when it learns (or relearns), it takes a long
 time. This system is simple, and often good enough.
 
-***** Online learning
+**** Online learning
 
 Can learn incrementally with small batches of data, called "mini
 batches". Each learning step is fast and cheap. It doesn't necessarily
@@ -99,14 +99,14 @@ key feature of online learning is that it can learn incrementally.
 "Learning rate" is how fast the system should adapt to new data. High
 means adapt quickly.
 
-**** Instance-based versus Model-based learning
+*** Instance-based versus Model-based learning
 
-***** Instance-based learning
+**** Instance-based learning
 
 Based on individual examples. Things are classified based on how
 similar they are to already classified instances.
 
-***** Model-based
+**** Model-based
 
 Model-based makes predictions.
 
@@ -145,15 +145,27 @@ errors, since all errors are squared.
 
 * Algorithms
 
-** Stochastic Gradient Descent classifier (<<<SGD>>>)
+** Stochastic Gradient Descent classifier <<<SGD>>>                    :clf:
 
 - Advantage: Handles large datasets efficiently.
 - Note: It's random. Use random_state=42 argument to constructor
   to make it repeatable.
 
-** K-nearest Neighbor (<<<KNN>>>)
+** K-nearest Neighbor <<<KNN>>>                                        :clf:
 
 - Used for: Classification and regression.
+
+** Support Vector Machines <<<SVM>>>                                   :clf:
+
+- SVMs are supervised learning models.
+- When labels aren't available, they rely on trying to find
+  clusters of data, and consider new observations as belonging
+  to one of these clusters.
+
+*** Applications
+
+- Helpful in text and hypertext categorization.
+- Classification of images can be performed using SVMs.
 
 * Concepts
 
@@ -194,7 +206,10 @@ Down |
 
 * Scoring
 
-** Root Mean Square Error (<<<RMSE>>>)
+** Root Mean Square Error <<<RMSE>>>
+
+RMSE is a scoring function which focuses on the bigger errors,
+since the scores are squared.
 
 * Glossary
 
