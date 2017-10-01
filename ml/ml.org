@@ -167,6 +167,12 @@ errors, since all errors are squared.
 - Helpful in text and hypertext categorization.
 - Classification of images can be performed using SVMs.
 
+** <<<Random Forest Classifiers>>>                                     :clf:
+
+- Capable of handling more than two classes; IE, not a binary
+  classifier. 
+
+
 * Concepts
 
 ** <<<Precision>>> and <<<Recall>>>
@@ -203,6 +209,21 @@ Down |
   cats, 3 dogs and no rabbits.
 - Of the 7 PREDICTED cats, 2 were actually dogs and 5 were in
   fact cats.
+
+** One vs One and One vs All
+
+*** One vs One <<<OvO>>>
+
+- One vs One is when you train a binary classifier to
+  distinguish between 5 and 0, one between 5 and 1, one between
+  5 and 2, etc.
+
+*** One vs All <<<OvA>>>
+
+- One vs All is when for each class, you have a binary
+  classifier for each *pair*.
+- If you have 10 classes (n = 10), you will need:
+  - n * (n - 1) / 2 = 45 classifiers.
 
 * Scoring
 
