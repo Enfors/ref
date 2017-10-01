@@ -161,6 +161,8 @@ errors, since all errors are squared.
 - When labels aren't available, they rely on trying to find
   clusters of data, and consider new observations as belonging
   to one of these clusters.
+- Scales poorly with the size of the training set, so with this
+  one, probably use OvO rather than OvA.
 
 *** Applications
 
@@ -169,8 +171,8 @@ errors, since all errors are squared.
 
 ** <<<Random Forest Classifiers>>>                                     :clf:
 
-- Capable of handling more than two classes; IE, not a binary
-  classifier. 
+- Capable of handling more than two classes; IE, it is a
+  multiclass classifier, not a binary classifier.
 
 
 * Concepts
@@ -220,10 +222,19 @@ Down |
 
 *** One vs All <<<OvA>>>
 
+- Preferred for most binary classifications algorithms.
 - One vs All is when for each class, you have a binary
   classifier for each *pair*.
 - If you have 10 classes (n = 10), you will need:
   - n * (n - 1) / 2 = 45 classifiers.
+
+** Algorithm types
+
+*** <<<Multilabel Classification Systems>>>
+
+- Outputs zero or more classes for each instance. For example, a
+  face recognizer should be able to spot more than one face in
+  each photo.
 
 * Scoring
 
