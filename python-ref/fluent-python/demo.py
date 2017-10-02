@@ -3,7 +3,7 @@
 def headline(line):
     "Return a headline string with a separator."
     max_len = 78
-    sep_len = int((max_len - len(line)) / 2) - 2
+    sep_len = int((max_len - len(line)) / 2) - 4
 
     return "\n [" + "=" * sep_len + "  " + line + "  " + "=" * sep_len + "]"
 
