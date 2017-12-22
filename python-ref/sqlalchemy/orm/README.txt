@@ -1,5 +1,9 @@
 All files in this directory are from the book Essential SQLAlchemy.
 
+My own experiments
+==================
+orm_exp.py
+
 Chapter 6: ORM
 ==============
 ex6_1.py: Basics
