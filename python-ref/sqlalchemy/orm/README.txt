@@ -8,3 +8,4 @@ ex6_3.py: Relationships, one-to-many
 
 Chapter 7: Working with Data via SQLAlchemy ORM
 ===============================================
+ex7_complete.py: Look at this one, disregard other ex7* files.
