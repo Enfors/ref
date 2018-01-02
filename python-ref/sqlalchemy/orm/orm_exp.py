@@ -57,6 +57,5 @@ if __name__ == '__main__':
                     data_key="bukai",
                     data_val="shodan")
     print(enfors)
-    print(data)
 
     
