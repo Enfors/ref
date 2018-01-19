@@ -10,7 +10,7 @@ from sqlalchemy.orm import relationship, backref
 
 from datetime import datetime
 
-engine = create_engine("sqlite:///:memory:", echo=False)
+engine = create_engine("sqlite:///file.db", echo=False)
 
 Session = sessionmaker(bind=engine)
 
@@ -52,10 +52,13 @@ class UserData(Base):
 
     
 if __name__ == '__main__':
+    Base.metadata.create_all(engine)
     enfors = User(name="Enfors")
     data = UserData(user=enfors,
                     data_key="bukai",
                     data_val="shodan")
+    session.add(enfors)
+    session.commit()
     print(enfors)
 
     
