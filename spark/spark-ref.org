@@ -1,0 +1,42 @@
+* Spark
+
+** <<<Hadoop>>>
+
+*** File operations
+
+**** Upload file to HDFS
+
+$ hadoop fs -put warandpeace.txt /data/books
+
+or
+
+$ hadoop fs -copyFromLocal warandpeace.txt /data/books
+
+or
+
+$ hadoop dfs -put warandpeace.txt /data/books
+
+**** Download file from HDFS
+
+$ hadoop fs -get /data/reports/report/.csv
+
+**** ls
+
+$ hadoop fs -ls /data/reports
+
+**** rm
+
+$ hadoop fs -rm /data/reports/report.csv
+
+**** rmdir
+
+$ hadoop fs -rm -r /data/reports
+
+** <<<YARN>>> - Yet Another Resource Negotiator
+
+Replaces MapReduce v1 (MR1).
+
+*** <<<NodeManagers>>>
+
+NoneManagers are worker daemons or processes, to which YARN distribute
+the application's workload.
