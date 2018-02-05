@@ -1,10 +1,8 @@
-* Spark
+* <<<Hadoop>>>
 
-** <<<Hadoop>>>
+** File operations
 
-*** File operations
-
-**** Upload file to HDFS
+*** Upload file to HDFS
 
 $ hadoop fs -put warandpeace.txt /data/books
 
@@ -16,27 +14,82 @@ or
 
 $ hadoop dfs -put warandpeace.txt /data/books
 
-**** Download file from HDFS
+*** Download file from HDFS
 
 $ hadoop fs -get /data/reports/report/.csv
 
-**** ls
+*** ls
 
 $ hadoop fs -ls /data/reports
 
-**** rm
+*** rm
 
 $ hadoop fs -rm /data/reports/report.csv
 
-**** rmdir
+*** rmdir
 
 $ hadoop fs -rm -r /data/reports
 
-** <<<YARN>>> - Yet Another Resource Negotiator
+* <<<YARN>>> - Yet Another Resource Negotiator
 
 Replaces MapReduce v1 (MR1).
 
-*** <<<NodeManagers>>>
+** <<<NodeManagers>>>
 
 NoneManagers are worker daemons or processes, to which YARN distribute
 the application's workload.
+
+** <<<YARN logs>>>
+
+To view the log:
+
+$ yarn logs --applicationId <app ID>
+
+*** The YARN timeline server
+
+Shows logs in a graphical interface. Available on port 8188.
+
+* <<<Spark Driver>>>
+
+** Application planning
+
+The driver takes all the requested transformations and actions and
+creates a <<<directed acyclic graph>>> (<<<DAG>>>). DAGs contain
+vertices or nodes and edges, which are steps in the process flow.
+
+The DAG consists of tasks (the smallest unit of schedulable work in a
+spark program) and stages.
+
+** Application scheduling
+
+** Application UI
+
+Runs on port 4040 by default, subsequent applications run on 4041,
+4042, etc.
+
+** Spark <<<Executor>>> and <<<Worker>>>
+
+They're hosted in JVMs - JVMs for executors are called a <<<heap>>>.
+
+Worker nodes have a user interface on port 8081.
+
+** Spark <<<Master>>> and <<<Cluster Manager>>>
+
+The Spark Master has a user interface on port 8080.
+
+The master does not govern the execution of the application - it
+simply requests resources and makes them available to the driver for
+the lifetime of the application, and monitors the status of the
+resources. The driver governs.
+
+* Spark Programming
+
+** RDD - Resilient Distributed Datasets
+
+<<<RDD>>>s are primarily inteded to be stored in RAM, but can also be
+stored on disk. 
+
+RDDs cannot be updated.
+
+Actions are the operations that can be performed on RDDs. 
+
