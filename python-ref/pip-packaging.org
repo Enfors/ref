@@ -1,0 +1,38 @@
+* Directory structure
+
+project_name/
+- project_name/
+  - __init__.py
+  - project code files
+- setup.py
+
+* setup.py example
+
+#!/usr/bin/env python3
+
+from setuptools import setup, find_packages
+
+setup(
+    name="EnforsML",
+    version="0.0.3",
+    author="Christer Enfors",
+    author_email="christer.enfors@gmail.com",
+    url="https://github.com/enfors/EnforsML",
+    license="LGPL",
+    description="A very small set of tools used for things related to "
+    "machine learning.",
+    packages=find_packages(),
+    install_requires=["pillow"],
+    python_requires=">=3",
+
+)
+
+* Packaging
+
+$ python3 setup.py sdist
+
+This creates the dist directory.
+
+* Uploading
+
+$ twine upload dist/*
