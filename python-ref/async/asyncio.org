@@ -1,0 +1,9 @@
+* Terminology
+
+** Coroutine
+
+A generator that consumes data, but doesn't generate it.
+
+** Task
+
+A scheduler for coroutines.
