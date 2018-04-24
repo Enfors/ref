@@ -1,0 +1,6 @@
+* 2016
+
+** #75 - Pythonic games at CheckIO
+
+- checkio.org - Coding game, similar to Myst
+- empireofcode.com - Strategy, tactics, coding. Like Clash of Clans.
