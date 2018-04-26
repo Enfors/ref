@@ -1,0 +1,6 @@
+* Commands
+
+| Command  | Description             |
+|----------+-------------------------|
+| pip list | List installed packages |
+|          |                         |
