@@ -7,3 +7,13 @@ A generator that consumes data, but doesn't generate it.
 ** Task
 
 A scheduler for coroutines.
+
+* Python 3.4 vs 3.5+ syntax
+
+| Python 3.4 syntax       | Python 3.5+ syntax   |
+|-------------------------+----------------------|
+| import asyncio          | import asyncio       |
+|                         |                      |
+| @asyncio.coroutine      |                      |
+| def my_color():         | async def my_coro(): |
+| (tab) yield from func() | (tab) await func()   |
