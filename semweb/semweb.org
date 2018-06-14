@@ -1,0 +1,22 @@
+* Terms
+
+** URI / URL
+
+URI = Uniform Resource Identifier.
+
+A URL is a kind of URI.
+
+** RDF
+
+Resource Description Framework.
+
+Used to make triplets:
+
+statement = subject predicate object
+ex, Jane sells books.
+
+** Ontology
+
+Ontology is a precise explanation of terms and reasoning in a subject
+area. 
+
