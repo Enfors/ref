@@ -1,0 +1,59 @@
+# example.ttl
+# Taken from https://www.youtube.com/watch?v=AXN9gszoti4&index=5&list=PLea0WJq13cnDDe8V7eVLReIaOnFztOEAq
+
+# @prefix basically creates an alias (namespace?). The first @prefix
+# creates the "ab" alias for the URL that follows, so you don't have to
+# keep typing the whole URL.
+
+@prefix ab: <http://learningsparql.com/ns/addressbook#> .
+@prefix d:  <http://learningsparql.com/ns/data#>        .
+
+# The basic data format is:
+# subject predicate object .
+
+# Whitespace is ignored, so can also be:
+# subject
+#     predicate object
+
+# Can also be:
+# subject
+#     predicate1 object1 ;
+#     predicate2 object2 .
+
+# If you have many objects for the same predicate (for example, if you
+# have many email adresses, you can separate them with comma:
+# subject
+#     predicate1 object1.1, object1.2 .
+
+# People
+
+d:i0432
+    ab:firstName "Richard" ;
+    ab:lastName  "Mutt"    ;
+    ab:email     "richard49@hotmail.com" .
+
+d:i9771
+    ab:firstName "Cindy" ;
+    ab:lastName  "Marshall" ;
+    ab:email     "cintym@gmail.com" .
+
+d:i8301
+    ab:firstName "Craig" ;
+    ab:lastName  "Ellis" ;
+    ab:email     "c.ellis@usairwaysgroup.com" .
+
+# Courses
+
+d:course34 ab:courseTitle "Modeling Data with OWL" .
+d:course71 ab:courseTitle "Enhancing Websites with RDFa" .
+d:course59 ab:courseTitle "Updating Data with SPARQL" .
+
+# Who's taking which courses
+
+d:i8301 ab:takingCourse d:course59 .
+d:i9771 ab:takingCourse d:course34 .
+d:i0432 ab:takingCourse d:course85 .
+d:i0432 ab:takingCourse d:course59 .
+d:i9771 ab:takingCourse d:course59 .
+
+

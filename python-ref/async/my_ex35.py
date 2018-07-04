@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 
 """
-This is my own experiment for Python 3.4+.
+This is my own experiment for Python 3.5+.
 """
 
 import asyncio
@@ -23,6 +23,8 @@ async def do_work(number):
 tasks = [
     asyncio.ensure_future(do_work(2)),
     asyncio.ensure_future(do_work(4)),
+    asyncio.ensure_future(do_work(8)),
+    asyncio.ensure_future(do_work(16)),
 ]
 
 loop = asyncio.get_event_loop()

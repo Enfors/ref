@@ -1,0 +1,61 @@
+* Installation
+
+$ pip install virtualenv
+
+* Getting started
+
+** Creating a virtual environment
+
+$ mkdir -p ~/devel/python/envs/
+$ cd ~/devel/python/envs
+$ virtualenv my-env             # Creates the env
+
+*** Creating an environment with a specific Python version
+
+$ virtualenv -p /usr/bin/python3 my-py3-env
+
+** Activating the virtual environment
+
+$ cd ~/devel/python/envs/my-env
+$ source bin/activate
+
+** Verifying the virtual environment
+
+The name of the virtual environment will be prepended to your prompt.
+
+Check the python version with:
+
+$ which python
+
+Check which packages are installed:
+
+$ pip list
+
+** Installing packages into the virtual environment
+
+$ pip install numpy
+
+** Deactivating / leaving the virtual environment
+
+$ deactivate
+
+** Cloning / copying a virtual environment
+
+$ cd ~/devel/envs
+$ source my-env/bin/activate
+(my-env) $ pip freeze --local > requirements.txt
+(my-env) $ deactivate
+$ 
+$ virtualenv my-env2
+$ my-env2/bin/activate
+(my-env2) $ pip install -r requirements.txt
+
+* Best practices
+
+** Have a common dir where all envs are stored
+
+$ mkdir ~/devel/python/envs
+
+** Do NOT put code inside the virtual env
+
+It is only for your requirements.
