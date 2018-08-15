@@ -1,0 +1,29 @@
+* Docker Setup
+
+https://hub.docker.com/r/talkamatic/tdm/
+j$ docker login
+$ alias tala='sudo docker run --rm -i -t --mount type=bind,source="$(pwd)",target=/data -w /data talkamatic/tdm:8.0.0.rc2 tdm'
+
+* Building
+
+$ tala build
+
+* Enabling / disabling RASA
+
+Edit cevt_prototype2_ddd/ddd.config.json
+
+* Testing
+
+$ tala test eng
+
+* Notes
+
+When running "tala", always be in the dir with backend.config.json. 
+
+Every time you change the grammar, you must build.
+
+Disable repeat questions in backend.config.json.
+
+Postman is installed in ~/build/Postman/app.
+
+Use the URL http://54.171.174.0:9090/interact.
