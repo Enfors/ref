@@ -17,6 +17,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
 
+
 class User(Base):
     __tablename__ = "users"
 
@@ -47,10 +48,12 @@ class UserData(Base):
                                                 order_by=data_id))
 
     def __str__(self):
-        return "UserData: User: %s, key='%s', val='%s'" % (self.user.name, self.data_key,
-                                                       self.data_val)
+        return "UserData: User: %s, key='%s', val='%s'" % \
+            (self.user.name,
+             self.data_key,
+             self.data_val)
 
-    
+
 if __name__ == '__main__':
     Base.metadata.create_all(engine)
     enfors = User(name="Enfors")
@@ -60,5 +63,3 @@ if __name__ == '__main__':
     session.add(enfors)
     session.commit()
     print(enfors)
-
-    
