@@ -7,10 +7,12 @@ https://tutorialedge.net/python/concurrency/asyncio-event-loops-tutorial/
 
 import asyncio
 
+
 async def first_worker():
     while True:
         await asyncio.sleep(1)
         print("First worker executed")
+
 
 async def second_worker():
     while True:

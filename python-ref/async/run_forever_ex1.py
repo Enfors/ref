@@ -7,6 +7,7 @@ https://tutorialedge.net/python/concurrency/asyncio-event-loops-tutorial/
 
 import asyncio
 
+
 async def work():
     while True:
         await asyncio.sleep(1)
