@@ -100,3 +100,8 @@ RDDs cannot be updated.
 
 Actions are the operations that can be performed on RDDs. 
 
+
+** Running examples
+
+$ ./bin/spark-submit --class org.apache.spark.examples.SparkPi \
+--master local[8] examples/jars/spark-examples_2.11-2.4.0.jar 10000
