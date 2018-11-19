@@ -9,11 +9,11 @@ from rdflib import URIRef, BNode, Literal
 
 # Creating nodes:
 bob = URIRef("http://example.org/people/Bob")
-linda = BNode() # a GUID is generated. BNode = blank node
+linda = BNode()         # a GUID is generated. BNode = blank node
 
-name = Literal("Bob") # passing a string
-age = Literal(24) # passing a python int
-height = Literal(76.5) # passing a python float
+name = Literal("Bob")   # passing a string
+age = Literal(24)       # passing a python int
+height = Literal(76.5)  # passing a python float
 
 # To create many URIRefs in the same namespace, that is, URIs with the
 # same prefix, RDFLib has the rdflib.namespace.Namespace class:
