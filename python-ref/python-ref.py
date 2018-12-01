@@ -77,3 +77,9 @@ hello2("foo")
 # Neat syntax for finding errors:
 errors = log_data.filter(lambda line: "ERROR" in line)
 
+# Avoiding temporary variables
+# For example, when swapping the value of two variables:
+a, b = b, a
+
+# Also, from a fibionati implementation:
+current, nxt = nxt, current + nxt
