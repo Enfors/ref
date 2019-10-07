@@ -1,0 +1,38 @@
+* Installation
+
+I won't cover installation, because that's likely to change before the
+next time I read this.
+
+* Initializing a new project
+
+$ rasa init --no-prompt
+
+** Files created
+
+| File            | Purpose                                 |
+|-----------------+-----------------------------------------|
+| __init.py__     | Empty file.                             |
+| actions.py      | Code for your custom actions            |
+| config.yml      | Configuration of NLU and Core models    |
+| credentials.yml | For connecting to other services        |
+| data/nlu.md     | NLU training data                       |
+| data/stories.md | Your stories                            |
+| domain.yml      | Your assistant's domain                 |
+| endpoints.yml   | Details for connecting to FB mess., etc |
+| models/*.tar.gz | Your initial model                      |
+
+* Making basic edits
+
+** 1. Write a story in data/stories.md
+
+** 2. Define a domain in domain.yml
+
+** 3. Update data/nlu.md
+
+** 4. Train a model
+
+$ rasa train
+
+** 5. Talk to it
+
+$ rasa shell
