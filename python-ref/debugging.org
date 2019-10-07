@@ -1,0 +1,10 @@
+* Debugging in Emacs
+
+Add the following to the file:
+
+    import pdb
+    pdb.set_trace()
+
+Then, M-x pdb.
+
+Run the command as "python -m pdb filename.py".
