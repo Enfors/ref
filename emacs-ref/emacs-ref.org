@@ -48,6 +48,11 @@ winner-mode, you can go back to having the three windows by typing C-c
 | C-M-h     | Mark defun        |
 | C-M-<SPC> | Mark sexpr / word |
 
+* Code exploration
+
+With M-x find-library <RET> erc <RET> you can see the source of ERC,
+and so on.
+
 * Third party software
 
 ** Installing third party software
