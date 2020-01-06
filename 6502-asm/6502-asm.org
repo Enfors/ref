@@ -1,0 +1,25 @@
+* Monitor commands
+
+| Command      | Description                              |
+|--------------+------------------------------------------|
+| mon          | Start monitor                            |
+| a2000 (code) | Insert code at $2000                     |
+| d2000 2004   | Disassemble (show) code at $2000 - $2004 |
+| g2000        | Goto (run) code at $2000                 |
+| x            | Exit monitor                             |
+
+* 6502 assembly basics
+
+** Instructions
+
+| Instruction | Description             |
+|-------------+-------------------------|
+| lda #$40    | Store $40 in a          |
+| sta $0600   | Copy a to address $0600 |
+
+** Writing to the screen
+
+Screen memory is $0400 to $07e7
+
+lda #$40  ; Character $40 (hex)
+sta $0600 ; Store $40 at $0600 (part way down the screen)
