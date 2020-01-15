@@ -26,8 +26,11 @@ async def main():
 
     # Wait for them. It doesn't matter that we're waiting for them
     # in the "wrong" order.
-    await task2
-    await task1
+    await asyncio.gather(task2, task1)
+
+    # Instead of using gather as above, you can await them one by one like this:
+    #await task2
+    #await task1
 
 # Run the asyncio stuff. With run(), you don't need an explicit
 # loop. This should be the starting point (and only be called once)
