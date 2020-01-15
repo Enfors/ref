@@ -1,0 +1,21 @@
+* Introduction
+
+By default, all strings in Python (since version 3) are Unicode,
+UTF-8. Byte arrays (type "bytes") are not - they're just old-style
+bytes.
+
+* Converting to Unicode
+
+** From bytes
+
+For example, you've read my_bytes from the network:
+
+my_bytes.decode()   # return string (utf-8) representation
+
+* Converting from Unicode
+
+** To bytes
+
+For example, because you want to send a string over the network:
+
+my_string.encode()  # returns byte representation
