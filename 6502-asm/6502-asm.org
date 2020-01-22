@@ -22,4 +22,5 @@
 Screen memory is $0400 to $07e7
 
 lda #$40  ; Character $40 (hex)
+
 sta $0600 ; Store $40 at $0600 (part way down the screen)
