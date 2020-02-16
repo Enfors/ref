@@ -1,0 +1,45 @@
+* Quickstart
+
+Go to where you want your directory to be created, and type:
+
+$ lektor quickstart
+
+* Running the local development server
+
+$ cd yourprojekt
+$ lektor server
+
+Then, navigate to http://localhost:5000 to visit it. The site will
+automatically rebuild and update when you change the source files.
+
+** Using the built-in web-based admin interface
+
+Either click on the pencil, or add /admin to the URL.
+
+* Building manually
+
+When the lektor server is running ("$ lektor server"), building will
+be done automatically. But you can also build manually, by typing:
+
+$ lektor build
+
+* The config file
+
+Inside your project directory, there's a file called
+projectname.lektorprojekt. That's your configuration file.
+
+* Deployment
+
+To have Lektor help you with deployment, add something like the
+following to your config file:
+
+[servers.prod]
+name = Production
+enabled = yes
+default = yes
+target = rsync://pyvarm@www.pythonvarmland.se:/var/www/PyVarm
+
+Then, you can deploy automatically by typing:
+
+$ lektor deploy
+
