@@ -1,0 +1,42 @@
+* Start / stop
+
+systemctl start pleroma
+
+systemctl stop pleroma
+
+systemctl restart pleroma
+
+* Administration
+
+** Blocking instances
+
+In /etc/pleroma/config.exs:
+
+
+config :pleroma, :instance,
+  ...
+  quarantined_instances: ["gab.com"],
+  rewrite_policy: Pleroma.Web.ActivityPub.MRF.SimplePolicy
+...
+config :pleroma, :mrf_simple,
+  reject: ["gab.com"]
+
+* Customization
+
+** Changing the About / Panel box
+
+/opt/pleroma/lib/pleroma-1.1.9/priv/static/instance/panel.html
+
+** Terms of service
+
+/opt/pleroma/lib/pleroma-1.1.9/priv/static/static/terms-of-service.html
+
+** Themes
+
+Each user can set their own theme. You can also download themes as
+json files from https://plthemes.vulpes.one.
+
+If you make your own theme, you can download it as a json. Using
+priv/static/static/styles.json. you can then make it available for
+other people, and in /etc/pleroma/config.exs you can make it the
+default. 
