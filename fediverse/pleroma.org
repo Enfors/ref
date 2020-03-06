@@ -23,6 +23,10 @@ config :pleroma, :mrf_simple,
 
 * Customization
 
+** Configuration files
+
+*** /etc/pleroma/config.exs
+
 ** Changing the About / Panel box
 
 /opt/pleroma/lib/pleroma-1.1.9/priv/static/instance/panel.html
@@ -40,3 +44,11 @@ If you make your own theme, you can download it as a json. Using
 priv/static/static/styles.json. you can then make it available for
 other people, and in /etc/pleroma/config.exs you can make it the
 default. 
+
+* Troubleshooting
+
+- On 2020-03-06, I changed to hostname (in /etc/hosts) and using the
+  hostname command, to "pythondevs". In /etc/pleroma/config.exs, it
+  says the hostname of the database is "localhost" (which was the
+  previous hostname). This might turn out to be a problem the next
+  time I restart Pleroma.
