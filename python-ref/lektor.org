@@ -43,3 +43,14 @@ Then, you can deploy automatically by typing:
 
 $ lektor deploy
 
+
+* Writing a blog post
+
+- Make a directory in content/blog/
+- Inside it, create the blog post in a file called contents.lr
+
+* Plugin for syntax highlighting
+
+https://github.com/lektor/lektor-markdown-highlighter
+
+$ lektor plugins add markdown-highlighter
