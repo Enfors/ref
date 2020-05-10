@@ -52,3 +52,6 @@ default.
   says the hostname of the database is "localhost" (which was the
   previous hostname). This might turn out to be a problem the next
   time I restart Pleroma.
+
+  - Indeed! I got problems connecting to postgresql until I changed
+    the name back to "localhost" in /etc/hosts.
