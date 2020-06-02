@@ -41,6 +41,9 @@ db.todos.insertMany([
   { name: "Fix sheduling", status: "Prep",  tags: ["1h",  "Computer"] }
 ]);
 
+** Show collections in database
+
+show collections
 
 ** Select
 
@@ -74,6 +77,14 @@ In the first { } are the search criteria, in the second { } are what
 to return (_id returns by default):
 
 db.inventory.find( { }, { item: 1, status: 1} );
+
+** Deleting documents
+
+db.users.remove( {"name": "Enfors"} )
+
+** Deleting collections
+
+db.users.drop()
 
 * Files and directories
 
