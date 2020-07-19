@@ -48,6 +48,8 @@ $ lektor deploy
 
 - Make a directory in content/blog/
 - Inside it, create the blog post in a file called contents.lr
+- Test it with "lektor serve" (localhost:5000)
+- Publish with "lektor deploy"
 
 * Plugin for syntax highlighting
 
